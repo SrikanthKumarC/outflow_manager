@@ -1,0 +1,39 @@
+.menu {
+    /* position: absolute; */
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    background-color: var(--surface);
+    height: 100vh;
+    /* width: 60px; */
+    gap: 30px;
+    padding: 0px 20px;
+    max-width: 50px;
+    padding-top: 45px;
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.menu > * {
+    font-size: 1.4em;
+    align-self: center;
+    color: #000;
+}
+.menu svg:last-child {
+    justify-self: flex-end;
+    align-self: flex-end;
+    /* color: red; */
+    margin-top: auto;
+    position: relative;
+    bottom: 25px;
+    /* border: 1px solid red; */
+}
+
+.menu svg:active {
+    border: 2px dotted black;
+}
+
+
+.highlight {
+    border: 1px dotted black;
+}

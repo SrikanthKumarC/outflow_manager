@@ -1,0 +1,75 @@
+.plusButton {
+    color: #46483C;
+    background-color: var(--surface);
+    height: 70px;
+    width: 70px;
+    background-color: #bbb;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    background-color: #46483C;
+    justify-content: center;
+    float: right;
+    cursor: pointer;
+    user-select: none;
+}
+.pb {
+    margin-top: 7px;
+    color: var(--surface);
+    font-size: 3em;
+    display: block;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 1px solid var(--on-surface);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.addTransaction {
+    position: fixed;
+    bottom: 5%;
+    right: 3%;
+    z-index: 1;
+    /* border: 1px solid red; */
+}
+
+
+button {
+    background-color: var(--surface);
+    border: 2px solid var(--on-surface);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color .1s ease-in,-webkit-transform .08s ease-in;
+}
+button:hover {
+    background-color: var(--on-surface);
+    color: #fff;
+}
+
+.addTransaction > form {
+    /* border: 1px solid red; */
+    margin-bottom: 10%;
+    background-color: #fff;
+    /* border: 1px dotted black; */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 7px 16px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: 1px 7px 16px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 7px 16px -7px rgba(0,0,0,0.75);
+}
+
+.invisible {
+    display: none;
+}

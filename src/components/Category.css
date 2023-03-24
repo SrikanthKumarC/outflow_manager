@@ -1,0 +1,23 @@
+.categoriesList > * {
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    display: block;
+    width: 100%;
+}
+.cat_container {
+    width: 100%;
+  margin-left: 40px;
+
+}
+.categoriesList {
+    display: block;
+}
+
+.flex {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+.flex > svg {
+    font-size: 1.8em;
+}

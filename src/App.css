@@ -1,0 +1,194 @@
+:root {
+  --color-green: #042825;
+  --color-leaf: #88ac13;
+  --color-blue: #4073ae;
+  --color-light: #fff;
+  --surface: #edf3dc;
+  --on-surface: #46483c;
+  --text-light: #8f8f8f;
+}
+
+.background {
+  margin-top: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.background input {
+  width: 100%;
+}
+.background button {
+  padding: 12px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.App {
+  display: flex;
+}
+img {
+  filter: invert(55%) sepia(70%) saturate(665%) hue-rotate(34deg)
+    brightness(97%) contrast(85%);
+  opacity: 20%;
+}
+.tab-group {
+  display: inline-block;
+  position: relative;
+  left: 20px;
+  top: -5px;
+  padding: 5px 10px;
+  /* background: var(--surface); */
+  border-radius: 5px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--on-surface);
+}
+body {
+  font-family: Inter;
+  /* padding: 20px 40px; */
+  background-color: var(--color-light);
+  color: #000;
+  position: relative;
+}
+.container-main {
+  /* border: 1px solid red; */
+  padding: 20px 40px;
+  width: 100%;
+  margin-left: 40px;
+}
+.bg-svg {
+  pointer-events: none;
+}
+.heading {
+  font-size: 24px;
+  display: inline-block;
+}
+.cards {
+  display: flex;
+  gap: 15px;
+}
+.card {
+  background-color: var(--surface);
+  padding: 20px 40px;
+  border-radius: 18px;
+  color: var(--on-surface);
+}
+.card > p {
+  margin-top: 10px;
+  font-size: 2.5em;
+}
+.card > span {
+  font-weight: 600;
+  font-size: 0.81em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.bg {
+  /* width: 200px; */
+  /* height: 200px; */
+  overflow: hidden;
+  position: absolute;
+  top: calc(0% - 20px);
+  right: calc(0% - 0px);
+  opacity: 50%;
+  z-index: -1;
+  /* Magic */
+  -moz-user-select: none; /* These user-select properties are inheritable, used to prevent text selection */
+  -webkit-user-select: none;
+  -ms-user-select: none; /* From IE10 only */
+  user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+  -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+  /* display: flex; */
+}
+
+.transaction {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.5fr 0.3fr 0.1fr;
+  align-items: center;
+  font-size: 1.3em;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.transactions {
+  padding: 40px 0px;
+}
+
+.transaction p {
+  font-weight: 400;
+}
+.symbol-income {
+  color: var(--color-leaf);
+  font-size: 1.7em;
+}
+.symbol-expense {
+  color: var(--color-blue);
+  font-size: 1.7em;
+}
+time {
+  color: var(--text-light);
+}
+.edit {
+  color: var(--on-surface);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  margin-top: 40px;
+}
+.aside {
+  text-align: center;
+}
+.balance-amt {
+  display: block;
+  font-size: 4em;
+  margin: 10px 0px 5px 0px;
+}
+.balance {
+  margin-bottom: 60px;
+}
+
+.limit {
+  padding: 20px;
+  display: inline-block;
+  background-color: var(--surface);
+  color: var(--on-surface);
+  font-size: 1.4em;
+  border-radius: 1.4em;
+}
+
+.limit-edit {
+  display: none;
+  margin: 0px 10px;
+}
+
+.limit-edit {
+  display: inline-block;
+}
+
+.limit-input {
+  max-width: 50%;
+}
+
+.invisible {
+  display: none;
+}
+
+.month {
+  background-color: var(--sruface);
+  margin: 0px 10px;
+  /* color: red; */
+  /* width: 60%; */
+}

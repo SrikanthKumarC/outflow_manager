@@ -1,0 +1,21 @@
+.modal {
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+    background:rgba(140, 139, 139, 0.5);
+}
+
+.wrapper {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    opacity: 100%;
+}
+
+

@@ -1,0 +1,68 @@
+.settings_flex {
+    display: flex;
+    margin-left: 50px;
+
+}
+
+.settings_main {
+    padding: 20px;
+    width: 100%;
+    
+}
+
+.danger {
+    display: inline-block;
+    background-color: #fe5b5b;
+    color: #ffffff;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 2px;
+    margin: 10px 0px;
+}
+.danger:hover {
+    background-color: red;
+}
+/* button {
+    all: initial;
+    box-sizing: border-box;
+
+} */
+.red {
+    background-color: #fe5b5b;
+    color: #fff;
+}
+button {
+    padding: 6px 15px;
+    height: min-content;
+    background-color: grey; 
+    color: #fff;
+    margin: 10px 0px;
+    /* padding: 10px; */
+}
+.btn_groupx {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(192, 192, 192);
+    width: 100%;
+    margin-top: 30px;
+}
+.btn_group {
+    margin-top: 20px;
+    /* display: inline-block; */
+    font-size: 18px;
+
+    /* width: 100%; */
+    /* grid-template-columns: 1fr 0.1fr; */
+}
+.btn_group > button {
+    font-size: 20px;
+}
+
+.fetch {
+    background-color: rgb(249, 249, 249);
+    color: rgb(255, 64, 0);
+    /* border: 2px solid blue; */
+    /* font-size: 20px;  */
+}
