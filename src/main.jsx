@@ -4,6 +4,8 @@ import "./index.css";
 
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 import Category from "./components/Category";
 
@@ -13,21 +15,42 @@ import { PersistGate } from "redux-persist/integration/react";
 import persistStore from "redux-persist/es/persistStore";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
+import Login from "./Login";
+
+const ProtectedApp = withAuthenticationRequired(App);
+const ProtectedCategory = withAuthenticationRequired(Category);
+const ProtectedSettings = withAuthenticationRequired(Settings);
+const ProtectedTransactions = withAuthenticationRequired(Transactions);
+
+const DOMAIN = import.meta.env.VITE_DOMAIN
+const CLIENT_ID = import.meta.env.VITE_CLIENT_ID
+
+console.log(DOMAIN)
+
 
 let persistor = persistStore(store);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<App />} />
-            <Route path="/categories" element={<Category />} />
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
+    <Auth0Provider
+      domain={DOMAIN}
+      clientId={CLIENT_ID}
+      authorizationParams={{
+        redirect_uri: window.location.origin + '/home',
+      }}
+    >
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/home" element={<ProtectedApp />} />
+              <Route path="/categories" element={<ProtectedCategory />} />
+              <Route path="/transactions" element={<ProtectedTransactions />} />
+              <Route path="/settings" element={<ProtectedSettings />} />
+            </Routes>
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
+    </Auth0Provider>
   </React.StrictMode>
 );

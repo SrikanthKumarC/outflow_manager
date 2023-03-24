@@ -37,3 +37,12 @@
 .highlight {
     border: 1px dotted black;
 }
+
+img.display_image {
+    width: 35px ;
+    border-radius: 100%;
+    filter: unset;
+    opacity: unset;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}

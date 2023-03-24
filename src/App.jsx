@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { MdModeEdit } from "react-icons/md";
 import { update } from "./app/features/limit/limitSlice";
 
+import { useAuth0 } from "@auth0/auth0-react";
+
+
 import { selectAllTransactions } from "./app/features/transactions/transactionSlice";
 
 import Currency from "./components/utilComponents/Currency";
@@ -15,6 +18,8 @@ import { updateTime } from "./app/features/transactions/timeSlice";
 
 function App() {
   const transactions = useSelector(selectAllTransactions);
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
   // handleMonths();
   console.log("select all", transactions);
   const limit = useSelector((state) => {
@@ -187,6 +192,7 @@ function App() {
             </select>
           </div>
         </section>
+        <p>Welcome {user.name}</p>
         <div className="container">
           <div className="main">
             <section className="cards">

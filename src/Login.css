@@ -1,0 +1,26 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #fff;
+}
+
+.login button {
+    text-align: center;
+    display: block;
+    width: 100%;
+
+}
+.inner_login {
+    border: 1px solid rgba(149, 157, 165, 0.1);
+    border-radius: 10px;
+    background-color: var(--surface);
+    padding: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.inner_login p {
+    margin-bottom: 30px;
+}
