@@ -7,6 +7,8 @@ import {
 } from "../../app/features/transactions/transactionSlice";
 import { updateTime } from "../../app/features/transactions/timeSlice";
 import { update } from "../../app/features/limit/limitSlice";
+import moment from "moment";
+
 
 const TransactionForm = () => {
   const dispatch = useDispatch();
@@ -57,7 +59,8 @@ const TransactionForm = () => {
     dispatch(updateTime(new Date()));
     if (showTypeVar === "add") {
       console.log("newly submitted");
-      dispatch(addTransaction({ title, category, date, type, amount }));
+      const transformedDate = new Date(date);
+      dispatch(addTransaction({ title, category, transformedDate, type, amount }));
     } else {
       console.log("editied", formData);
       dispatch(editTransaction({ ...formData }));
@@ -108,8 +111,8 @@ const TransactionForm = () => {
       <input
         name="date"
         type={"date"}
-        onChange={(e) => setFormData({ ...formData, date: new Date(e.target.value) })}
-        value={date}
+        onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+        value={moment(date).format('YYYY-MM-DD')}
       />
       <label htmlFor="category">Category</label>
       <select

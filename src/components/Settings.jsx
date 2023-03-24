@@ -11,7 +11,7 @@ import axios from "axios";
 import Modal from "./utilComponents/Modal";
 import { syncTransactions } from "../app/features/transactions/transactionSlice";
 
-const BANK_URL = "http://localhost:3000/bankData";
+const BANK_URL = "https://api.npoint.io/1d3b444715c1f45b1257/bankData";
 
 function Settings() {
   const [showModal, setShowModal] = useState(false);
