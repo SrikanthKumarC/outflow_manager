@@ -4,6 +4,7 @@ import { BsFillGearFill, BsGearFill } from "react-icons/bs";
 
 import { TbCategory } from "react-icons/tb";
 import { useAuth0 } from "@auth0/auth0-react";
+import { RiMoneyDollarCircleFill } from "react-icons/ri";
 
 import "./Menu.css";
 
@@ -36,6 +37,10 @@ const Menu = ({ selected }) => {
         <Link to="/settings">
           {" "}
           <BsGearFill className={selected === "settings" ? highlight : ""} />
+        </Link>
+        <Link to="/debt">
+          {" "}
+          <RiMoneyDollarCircleFill />
         </Link>
         <Link
           to="/"

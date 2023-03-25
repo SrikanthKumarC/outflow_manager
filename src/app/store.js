@@ -18,6 +18,7 @@ const reducer = combineReducers({
   limit: limitSlice,
   category: categorySlice,
   form: formSlice,
+  debt: debtSlice,
   time: timeSlice,
 });
 
@@ -28,7 +29,8 @@ import categorySlice from "./features/transactions/categorySlice";
 import limitSlice from "./features/limit/limitSlice";
 import formSlice from "./features/transactions/formSlice";
 import timeSlice from "./features/transactions/timeSlice";
+import debtSlice from "./features/transactions/debtSlice";
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: []
+  middleware: [],
 });

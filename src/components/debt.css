@@ -1,0 +1,15 @@
+.main_debt {
+    display: flex;
+}
+
+.manager {
+    margin:20px 70px ;
+}
+
+.debt_inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    border-bottom: 1px solid rgb(174, 174, 174);
+}

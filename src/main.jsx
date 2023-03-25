@@ -12,6 +12,10 @@ import Category from "./components/Category";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
+
+
+import DebtManager from "./components/DebtManager";
+
 import persistStore from "redux-persist/es/persistStore";
 import Transactions from "./components/Transactions";
 import Settings from "./components/Settings";
@@ -47,6 +51,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="/categories" element={<ProtectedCategory />} />
               <Route path="/transactions" element={<ProtectedTransactions />} />
               <Route path="/settings" element={<ProtectedSettings />} />
+              <Route path="/debt" element={<DebtManager />} />
             </Routes>
           </BrowserRouter>
         </PersistGate>
