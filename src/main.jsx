@@ -30,6 +30,7 @@ const DOMAIN = import.meta.env.VITE_DOMAIN
 const CLIENT_ID = import.meta.env.VITE_CLIENT_ID
 
 console.log(DOMAIN)
+console.log(CLIENT_ID)
 
 
 let persistor = persistStore(store);
