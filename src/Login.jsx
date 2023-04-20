@@ -11,15 +11,7 @@ const Login = () => {
         <h1>Expense Outflow Manager</h1>
         <p>Login to continue</p>
         <div className="btn_container">
-          <button
-            onClick={loginWithRedirect({
-              authorizationParams: {
-                redirect_uri: window.location.origin + '/home',
-              },
-            })}
-          >
-            Log In
-          </button>
+          <button onClick={loginWithRedirect()}>Log In</button>
           <button
             onClick={() =>
               logout({ logoutParams: { returnTo: window.location.origin } })
