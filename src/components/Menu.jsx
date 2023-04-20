@@ -12,7 +12,7 @@ import { Outlet, Link } from "react-router-dom";
 
 const Menu = ({ selected }) => {
   const highlight = "highlight";
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading, logout } = useAuth0();
 
   const userImage = isAuthenticated && (
     // <div>
