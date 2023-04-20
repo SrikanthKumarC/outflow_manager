@@ -40,7 +40,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain={DOMAIN}
       clientId={CLIENT_ID}
       authorizationParams={{
-        redirect_uri: window.location.origin + '/home',
+        redirect_uri: `${window.location.origin}/home`
       }}
     >
       <Provider store={store}>
