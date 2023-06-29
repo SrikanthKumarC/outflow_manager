@@ -100,7 +100,7 @@ function App() {
     if (expenseG > limit) {
       axios.post(`https://chapter-couples-extensive-specify.trycloudflare.com/${limit}`);
     }
-  }, [limit]);
+  }, [limit, expenseG]);
 
   const filterTxnsByMonth = () => {
     const dateString = eachMonth;
