@@ -6,9 +6,8 @@ import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { MdModeEdit } from "react-icons/md";
 import { update } from "./app/features/limit/limitSlice";
-
+import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
-
 
 import { selectAllTransactions } from "./app/features/transactions/transactionSlice";
 
@@ -97,19 +96,27 @@ function App() {
     handleMonths();
   }, [transactions]);
 
+  useEffect(() => {
+    if (expenseG > limit) {
+      axios.post(`https://chapter-couples-extensive-specify.trycloudflare.com/${limit}`);
+    }
+  }, [limit]);
+
   const filterTxnsByMonth = () => {
     const dateString = eachMonth;
     const dateMoment = moment(dateString, "MMM YYYY");
     const month = dateMoment.month(); // 3 (April is the 4th month, but Moment.js uses 0-indexed months)
     const year = dateMoment.year(); // 2022
 
-    const filteredTransactions = transactions.filter((transaction) => {
-      const transactionMoment = moment(transaction.date);
-      const transactionMonth = transactionMoment.month(); // Get the month index (0-indexed)
-      const transactionYear = transactionMoment.year(); // Get the year
-      return transactionMonth === month && transactionYear === year;
+    // filter transactions by month and year
+    const filteredTxns = transactions.filter((txn) => {
+      const txnDate = moment(txn.date);
+      const txnMonth = txnDate.month();
+      const txnYear = txnDate.year();
+
+      return txnMonth === month && txnYear === year;
     });
-    return filteredTransactions;
+    return filteredTxns;
   };
   let filterTxns = filterTxnsByMonth();
 
@@ -134,7 +141,7 @@ function App() {
       }, 0)
     );
 
-    console.log('incomessss, ' , incomesG)
+    console.log("incomessss, ", incomesG);
 
     filterTxns = filterTxnsByMonth();
     handleMonths();
@@ -180,6 +187,7 @@ function App() {
               onChange={(e) => {
                 // setFilterTxns(filterTxnsByMonth());
                 setEachMonth(e.target.value);
+                console.log("that month", eachMonth);
               }}
             >
               {months.map((month) => {

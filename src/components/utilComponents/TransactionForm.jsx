@@ -37,7 +37,7 @@ const TransactionForm = () => {
     title: "",
     category: "Others",
     date: new Date(),
-    type: "expense",
+    type: "income",
     amount: 0,
   });
 
