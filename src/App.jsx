@@ -99,7 +99,7 @@ function App() {
   useEffect(() => {
     if (limit === 0 || !limit) return;
     if (expenseG > limit) {
-      axios.post(`https://apparent-nepal-date-significantly.trycloudflare.com:3000/${limit}`);
+      axios.post(`https://apparent-nepal-date-significantly.trycloudflare.com/${limit}`);
       setLocalLimit(0);
       dispatch(update(localLimit))
     }
