@@ -97,8 +97,11 @@ function App() {
   }, [transactions]);
 
   useEffect(() => {
+    if (limit === 0 || !limit) return;
     if (expenseG > limit) {
-      axios.post(`https://chapter-couples-extensive-specify.trycloudflare.com/${limit}`);
+      axios.post(`https://apparent-nepal-date-significantly.trycloudflare.com:3000/${limit}`);
+      setLocalLimit(0);
+      dispatch(update(localLimit))
     }
   }, [limit, expenseG]);
 
